@@ -1,0 +1,5 @@
+@startuml
+class Example {
+    +Number sum(Number a, Number b)
+}
+@enduml
