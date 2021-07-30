@@ -1,5 +1,5 @@
 @startuml
 class Example {
-    +Number sum(Number a, Number b)
+    +number sum(number a, number b)
 }
 @enduml
