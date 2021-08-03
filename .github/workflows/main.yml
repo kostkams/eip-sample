@@ -3,15 +3,7 @@
 name: CI
 
 # Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+on: push
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -46,6 +38,6 @@ jobs:
         run: yarn run test:ci
 
       # Runs a set of commands using the runners shell
-      - name: Upload sests
+      - name: Upload tests
         run: echo ${{ steps.jira.outputs.first_match }} && yarn run uploadTests https://165a67b5a3d548d5bd06.westeurope.aksapp.io/v-model/tests ${{ steps.jira.outputs.first_match }}
         if: ${{ steps.jira.outputs.first_match != '' }}
