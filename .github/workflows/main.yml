@@ -39,5 +39,5 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Upload tests
-        run: echo ${{ steps.jira.outputs.first_match }} && yarn run uploadTests https://165a67b5a3d548d5bd06.westeurope.aksapp.io/v-model/tests ${{ steps.jira.outputs.first_match }}
+        run: echo ${{ steps.jira.outputs.first_match }} && yarn run uploadTests https://165a67b5a3d548d5bd06.westeurope.aksapp.io/v-model/tests ${{ steps.jira.outputs.first_match }} ${{ secrets.EIP_TESTS_SECRET }}
         if: ${{ steps.jira.outputs.first_match != '' }}
