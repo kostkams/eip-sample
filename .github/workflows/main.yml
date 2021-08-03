@@ -43,9 +43,9 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Test
-        run: yarn run test:ci && yarn run uploadTest https://165a67b5a3d548d5bd06.westeurope.aksapp.io/v-model/tests ${{ steps.jira.outputs.first_match }}
+        run: yarn run test:ci
 
       # Runs a set of commands using the runners shell
       - name: Upload sests
-        run: yarn run uploadTest https://165a67b5a3d548d5bd06.westeurope.aksapp.io/v-model/tests ${{ steps.jira.outputs.first_match }}
+        run: yarn run uploadTests https://165a67b5a3d548d5bd06.westeurope.aksapp.io/v-model/tests ${{ steps.jira.outputs.first_match }}
         if: ${{ steps.jira.outputs.first_match }} != ''
