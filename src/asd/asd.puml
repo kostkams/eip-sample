@@ -1,2 +1,5 @@
 @startuml
+    class Asd {
+        +number sub(number a, number b)
+    }
 @enduml
