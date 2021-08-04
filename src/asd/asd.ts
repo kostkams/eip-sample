@@ -1,3 +1,5 @@
 export default class Asd {
- public sub (a: number, b: number): number { throw new Error(); };
- }
+    public sub(a: number, b: number): number {
+        return a -b - 1;
+    };
+}
