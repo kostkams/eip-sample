@@ -42,9 +42,9 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Test
-        run: yarn run test:ci
+        run: yarn run test:ci || true
 
       # Runs a set of commands using the runners shell
       - name: Upload tests
-        run: echo ${{ steps.jira.outputs.first_match }} && yarn run uploadTests https://165a67b5a3d548d5bd06.westeurope.aksapp.io/v-model/tests ${{ steps.jira.outputs.first_match }} ${{ secrets.EIP_TESTS_SECRET }}
-        if: ${{ steps.jira-id.outputs.first_match != '' && steps.t-commit.outputs.first_match != '' }}
+        run: echo ${{ steps.jira.outputs.first_match }} && yarn run uploadTests https://165a67b5a3d548d5bd06.westeurope.aksapp.io/v-model/tests ${{ steps.jira-id.outputs.first_match }} ${{ secrets.EIP_TESTS_SECRET }}
+        if: ${{ steps.jira-id.outputs.first_match != '' }} && ${{ steps.t-commit.outputs.first_match != '' }}
