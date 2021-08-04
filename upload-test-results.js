@@ -1,5 +1,11 @@
 'use strict'
 
+const fs = require('fs');
+
+if (!fs.existsSync('./test-results.json')){
+  process.exit(0);
+}
+
 const results = require('./test-results.json')
 const fetch = require('node-fetch')
 
